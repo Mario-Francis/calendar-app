@@ -51,25 +51,15 @@ Calendar App is a web API application that integrates with Microsoft Graph to ma
 
 Endpoint: `GET /api/users/search/starts-with`
 
-Request Body:
-
-```json
-{
-    "searchTerms": ["John", "Doe"]
-}
-```
+Query Parameters:
+- `searchTerms`: List of search terms (e.g., `?searchTerms=John&searchTerms=Doe`)
 
 ### Get Users by Emails
 
 Endpoint: `GET /api/users/search/emails-in`
 
-Request Body:
-
-```json
-{
-    "emails": ["john.doe@example.com", "jane.doe@example.com"]
-}
-```
+Query Parameters:
+- `emails`: List of emails (e.g., `?emails=john.doe@example.com&emails=jane.doe@example.com`)
 
 ### Get Users Availability
 
