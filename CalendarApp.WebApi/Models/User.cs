@@ -7,4 +7,9 @@ public record User
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     public string? DisplayName { get; set; }
+
+    public override string ToString()
+    {
+        return $"Id: {Id}, Email: {Email}, FirstName: {FirstName}, LastName: {LastName}, DisplayName: {DisplayName}";
+    }
 }
