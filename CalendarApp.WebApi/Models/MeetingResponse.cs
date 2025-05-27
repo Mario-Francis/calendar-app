@@ -8,6 +8,6 @@ public record MeetingResponse
 
     public override string ToString()
     {
-        return $"Id: {Id}, Subject: {Subject}, MeetingLink: {MeetingLink}";
+        return $"Meeting Id to be used for update/cancellation is: {Id},\nSubject: {Subject}, \nMeetingLink: {MeetingLink}";
     }
 }

@@ -1,3 +1,4 @@
+using CalendarApp.WebApi.Middlewares;
 using CalendarApp.WebApi.Models;
 using CalendarApp.WebApi.Providers;
 using CalendarApp.WebApi.Services;
@@ -30,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseGlobalExceptionHandler();
 app.UseHttpsRedirection();
 app.MapControllers();
 

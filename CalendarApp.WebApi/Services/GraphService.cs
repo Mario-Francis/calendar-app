@@ -147,6 +147,12 @@ public class GraphService(GraphServiceClient graphServiceClient) : IGraphService
             return new List<Schedule>();
         }
 
+        var errors = scheduleResponse.Value?.Where(s => s.Error != null).ToList();
+        if (errors != null && errors.Count > 0)
+        {
+            throw new ValidationException($"Error retrieving availability for users: {string.Join(", ", errors.Select(e => e.Error!.Message))}");
+        }
+
         var _schedules = scheduleResponse.Value!.Select(s => new Schedule
         {
             ScheduleId = s.ScheduleId,
